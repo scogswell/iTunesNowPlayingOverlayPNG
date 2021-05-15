@@ -1,0 +1,46 @@
+body {
+	background-color: transparent; 
+	margin: 0px;
+}
+
+.track {
+	color: white; 
+	font-family: "Helvetica", sans-serif;
+	font-size: 32px;
+	font-style: italic; 
+
+}
+
+.artist {
+	color: #BBBBBB;
+	font-family: "Helvetica", sans-serif;
+	font-size: 24px;
+	font-style: normal; 
+
+}
+
+.album {
+	color: #BBBBBB;
+	font-family: "Helvetica", sans-serif;
+	font-size: 24px;
+	font-style: normal; 
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+	vertical-align: top; 
+	border: 0px solid black;
+}
+
+.infobox {
+	height: 128px; 
+	max-height: 128px; 
+	background-color: #000055;
+	opacity: 1.0; 
+	overflow: hidden;
+  	padding-right: 5px;
+  	padding-left: 5px;
+}
