@@ -124,10 +124,12 @@ set eof outFile to 0
 write srcBytes to outFile
 close access outFile	
 EOD
-		# If the album art came out as png, let's convert it to jpeg. 
+		artfile="albumart.jpg"
+		# We used to convert png art to jpg to make the html easier, but now that we're
+		# rendering directly you might as well save a call to SIPS and just use the png
+		# directly. 
 		if [ -f "$currentDir/albumart.png" ]; then
-			SIPS=`sips -s format jpeg albumart.png --out albumart.jpg`;
-			rm "$currentDir/albumart.png";
+			artfile="albumart.png"
 		fi
 	
 		if [ ! -f "$currentDir/albumart.jpg" ]; then    # Failsafe in case no album art file shows up
@@ -143,7 +145,7 @@ EOD
 		# as where you write the file. 
 		echo "<head><link rel=\"stylesheet\" href=\"nowplaying.css\"></head>
 	      	<table>
-	      	<td><img src=\"albumart.jpg\" width=\"128\"></td>
+	      	<td><img src=\"$artfile\" width=\"128\"></td>
 	      	<td>
 	      	<div class=\"infobox\">
 	      	<div class=\"track\">\"$track\"</div>
