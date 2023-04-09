@@ -40,9 +40,10 @@ function trap_ctrlc()
 # Headless chrome spits out a lot of superfluous output and thus the "2>/dev/null"
 # which will also not show you errors, so if you're having trouble remove that part
 # to see what's going on. 
+# At one point headless chrome wanted color in RGB format, throwing an error otherwise. 
 runHeadlessChrome() {
 	/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --headless \
-	--disable-gpu --window-size=800,150 --default-background-color=0 \
+	--disable-gpu --window-size=800,150 --default-background-color="000000" \
 	--screenshot="$outputFile" "$htmlFile" 2>/dev/null
 }
 
